@@ -1,3 +1,4 @@
+import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -8,7 +9,8 @@ import { RouterModule } from '@angular/router';
 			{
 				path: '',
 				children: [ { path: '', component: UserListComponent } ]
-			}
+			},
+			{ path: 'user/:name', component: UserComponent }
 		])
 	],
 	exports: [ RouterModule ]

@@ -1,3 +1,4 @@
+import { UserGuardService } from './core/users-guard.service';
 import { ResourceService } from './core/resource.service';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './authentication/login/login.component';
@@ -19,7 +20,7 @@ import { AppComponent } from './app.component';
 			{
 				path: 'users',
 				loadChildren: './users/users.module#UsersModule',
-				canLoad: [ ResourceService ]
+				canLoad: [ UserGuardService ]
 			}
 		])
 	],
