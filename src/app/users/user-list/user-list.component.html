@@ -1,8 +1,6 @@
 <h1>Users</h1>
 <div *ngIf="users$ | async as users">
-  
     <div *ngFor="let user of users">
-        <!--<a  [routerLink]="'{{user.id}}'">{{user.name}} </a> -->
         <a [routerLink]="['user', user.name]">{{user.name}}</a>
        
     </div>

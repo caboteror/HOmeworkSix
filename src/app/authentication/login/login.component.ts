@@ -1,4 +1,4 @@
-import { UserGuardService } from './../../core/users-guard.service';
+import { ResourceService } from './../../core/resource.service';
 import { User } from './../../users/user.iterface';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './login.component.scss' ]
 })
 export class LoginComponent implements OnInit {
-	constructor(private userGuarServices: UserGuardService) {}
+	constructor(private resourceService: ResourceService) {}
 
 	setUser(user: string) {
-		this.userGuarServices.setUser(user);
+		this.resourceService.setUser(user);
 	}
 
 	setPassword(password: string) {
-		this.userGuarServices.setPassword(password);
+		this.resourceService.setPassword(password);
+	}
+
+	validateUserAndPassword() {
+		this.resourceService.validateUserAndPassword();
 	}
 
 	ngOnInit() {}
